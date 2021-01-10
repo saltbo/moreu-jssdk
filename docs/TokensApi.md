@@ -20,13 +20,12 @@ Method | HTTP request | Description
 import MoreuJssdk from 'moreu-jssdk';
 
 let apiInstance = new MoreuJssdk.TokensApi();
-apiInstance.tokensDelete((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.tokensDelete().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -60,13 +59,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.TokensApi();
 let body = new MoreuJssdk.BindBodyToken(); // BindBodyToken | 参数
 
-apiInstance.tokensPost(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.tokensPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

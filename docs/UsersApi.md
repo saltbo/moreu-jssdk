@@ -26,13 +26,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
-apiInstance.userGet(username, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.userGet(username).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -70,13 +69,12 @@ let apiInstance = new MoreuJssdk.UsersApi();
 let body = new MoreuJssdk.BindBodyUserPatch(); // BindBodyUserPatch | 参数
 let email = "email_example"; // String | 邮箱
 
-apiInstance.usersEmailPatch(bodyemail, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.usersEmailPatch(bodyemail).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -117,13 +115,12 @@ let opts = {
   'limit': 56, // Number | 
   'offset': 56 // Number | 
 };
-apiInstance.usersGet(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.usersGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -162,13 +159,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.UsersApi();
 let body = new MoreuJssdk.BindBodyUser(); // BindBodyUser | 参数
 
-apiInstance.usersPost(body, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.usersPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -205,13 +201,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
-apiInstance.usersUsernameGet(username, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.usersUsernameGet(username).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -248,13 +243,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
-apiInstance.usersUsernamePut(username, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.usersUsernamePut(username).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

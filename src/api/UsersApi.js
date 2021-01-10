@@ -37,21 +37,14 @@ export default class UsersApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the userGet operation.
-     * @callback module:api/UsersApi~userGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * 当前登录用户信息
      * 获取已登录用户的详细信息
-     * @param {module:api/UsersApi~userGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    userGet(username, callback) {
+    userGetWithHttpInfo(username) {
       let postBody = null;
 
       let pathParams = {
@@ -72,24 +65,29 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the usersEmailPatch operation.
-     * @callback module:api/UsersApi~usersEmailPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 当前登录用户信息
+     * 获取已登录用户的详细信息
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
+    userGet(username) {
+      return this.userGetWithHttpInfo(username)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 更新一项用户信息
      * 用于账户激活和密码重置
-     * @param {module:api/UsersApi~usersEmailPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    usersEmailPatch(body, email, callback) {
+    usersEmailPatchWithHttpInfo(body, email) {
       let postBody = body;
 
       let pathParams = {
@@ -110,25 +108,30 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/users/{email}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the usersGet operation.
-     * @callback module:api/UsersApi~usersGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 更新一项用户信息
+     * 用于账户激活和密码重置
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
      */
+    usersEmailPatch(body, email) {
+      return this.usersEmailPatchWithHttpInfo(body, email)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 用户列表
      * 获取用户列表信息
      * @param {Object} opts Optional parameters
-     * @param {module:api/UsersApi~usersGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    usersGet(opts, callback) {
+    usersGetWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -152,24 +155,30 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the usersPost operation.
-     * @callback module:api/UsersApi~usersPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 用户列表
+     * 获取用户列表信息
+     * @param {Object} opts Optional parameters
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
+    usersGet(opts) {
+      return this.usersGetWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 用户注册
      * 注册一个用户
-     * @param {module:api/UsersApi~usersPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
-    usersPost(body, callback) {
+    usersPostWithHttpInfo(body) {
       let postBody = body;
 
       let pathParams = {
@@ -189,24 +198,29 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/users', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the usersUsernameGet operation.
-     * @callback module:api/UsersApi~usersUsernameGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 用户注册
+     * 注册一个用户
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
+    usersPost(body) {
+      return this.usersPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 用户查询
      * 获取一个用户的公开信息
-     * @param {module:api/UsersApi~usersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    usersUsernameGet(username, callback) {
+    usersUsernameGetWithHttpInfo(username) {
       let postBody = null;
 
       let pathParams = {
@@ -227,24 +241,29 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/users/{username}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the usersUsernamePut operation.
-     * @callback module:api/UsersApi~usersUsernamePutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 用户查询
+     * 获取一个用户的公开信息
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
+    usersUsernameGet(username) {
+      return this.usersUsernameGetWithHttpInfo(username)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 修改个人信息
      * 更新用户的个人信息
-     * @param {module:api/UsersApi~usersUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    usersUsernamePut(username, callback) {
+    usersUsernamePutWithHttpInfo(username) {
       let postBody = null;
 
       let pathParams = {
@@ -265,8 +284,20 @@ export default class UsersApi {
       return this.apiClient.callApi(
         '/users/{username}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 修改个人信息
+     * 更新用户的个人信息
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
+     */
+    usersUsernamePut(username) {
+      return this.usersUsernamePutWithHttpInfo(username)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

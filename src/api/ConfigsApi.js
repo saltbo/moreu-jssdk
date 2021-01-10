@@ -32,21 +32,14 @@ export default class ConfigsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the configsKeyDelete operation.
-     * @callback module:api/ConfigsApi~configsKeyDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * 删除配置项
      * 根据键名删除配置项
-     * @param {module:api/ConfigsApi~configsKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    configsKeyDelete(key, callback) {
+    configsKeyDeleteWithHttpInfo(key) {
       let postBody = null;
 
       let pathParams = {
@@ -67,24 +60,29 @@ export default class ConfigsApi {
       return this.apiClient.callApi(
         '/configs/{key}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the configsKeyGet operation.
-     * @callback module:api/ConfigsApi~configsKeyGetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 删除配置项
+     * 根据键名删除配置项
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
      */
+    configsKeyDelete(key) {
+      return this.configsKeyDeleteWithHttpInfo(key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 获取配置项
      * 根据键名获取配置项
-     * @param {module:api/ConfigsApi~configsKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    configsKeyGet(key, callback) {
+    configsKeyGetWithHttpInfo(key) {
       let postBody = null;
 
       let pathParams = {
@@ -105,24 +103,29 @@ export default class ConfigsApi {
       return this.apiClient.callApi(
         '/configs/{key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the configsKeyPut operation.
-     * @callback module:api/ConfigsApi~configsKeyPutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 获取配置项
+     * 根据键名获取配置项
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
      */
+    configsKeyGet(key) {
+      return this.configsKeyGetWithHttpInfo(key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 修改配置项
      * 根据键名修改配置项
-     * @param {module:api/ConfigsApi~configsKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    configsKeyPut(body, key, callback) {
+    configsKeyPutWithHttpInfo(body, key) {
       let postBody = body;
 
       let pathParams = {
@@ -143,8 +146,20 @@ export default class ConfigsApi {
       return this.apiClient.callApi(
         '/configs/{key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 修改配置项
+     * 根据键名修改配置项
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
+     */
+    configsKeyPut(body, key) {
+      return this.configsKeyPutWithHttpInfo(body, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

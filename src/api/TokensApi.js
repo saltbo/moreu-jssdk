@@ -33,21 +33,14 @@ export default class TokensApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    /**
-     * Callback function to receive the result of the tokensDelete operation.
-     * @callback module:api/TokensApi~tokensDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+
 
     /**
      * 退出登录
      * 用户状态登出
-     * @param {module:api/TokensApi~tokensDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    tokensDelete(callback) {
+    tokensDeleteWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -67,24 +60,29 @@ export default class TokensApi {
       return this.apiClient.callApi(
         '/tokens', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
+
     /**
-     * Callback function to receive the result of the tokensPost operation.
-     * @callback module:api/TokensApi~tokensPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/HttputilJSONResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * 退出登录
+     * 用户状态登出
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
      */
+    tokensDelete() {
+      return this.tokensDeleteWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * 登录/密码重置
      * 用于账户登录和申请密码重置
-     * @param {module:api/TokensApi~tokensPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/HttputilJSONResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HttputilJSONResponse} and HTTP response
      */
-    tokensPost(body, callback) {
+    tokensPostWithHttpInfo(body) {
       let postBody = body;
 
       let pathParams = {
@@ -104,8 +102,20 @@ export default class TokensApi {
       return this.apiClient.callApi(
         '/tokens', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * 登录/密码重置
+     * 用于账户登录和申请密码重置
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HttputilJSONResponse}
+     */
+    tokensPost(body) {
+      return this.tokensPostWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
 
 }

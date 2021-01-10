@@ -23,13 +23,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.ConfigsApi();
 let key = "key_example"; // String | 键名
 
-apiInstance.configsKeyDelete(key, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.configsKeyDelete(key).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -66,13 +65,12 @@ import MoreuJssdk from 'moreu-jssdk';
 let apiInstance = new MoreuJssdk.ConfigsApi();
 let key = "key_example"; // String | 键名
 
-apiInstance.configsKeyGet(key, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.configsKeyGet(key).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters
@@ -110,13 +108,12 @@ let apiInstance = new MoreuJssdk.ConfigsApi();
 let body = null; // Object | 参数
 let key = "key_example"; // String | 键名
 
-apiInstance.configsKeyPut(bodykey, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
+apiInstance.configsKeyPut(bodykey).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
 });
+
 ```
 
 ### Parameters

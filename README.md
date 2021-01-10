@@ -74,14 +74,12 @@ var MoreuJssdk = require('moreu-jssdk');
 var api = new MoreuJssdk.ConfigsApi()
 var key = "key_example"; // {String} 键名
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.configsKeyDelete(key, callback);
+api.configsKeyDelete(key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ## Documentation for API Endpoints
