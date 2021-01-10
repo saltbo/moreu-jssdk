@@ -1,4 +1,4 @@
-# MoreuApi.ModelUserProfile
+# MoreuJssdk.ModelUserProfile
 
 ## Properties
 Name | Type | Description | Notes

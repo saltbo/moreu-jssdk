@@ -1,4 +1,4 @@
-# MoreuApi.ConfigsApi
+# MoreuJssdk.ConfigsApi
 
 All URIs are relative to *//localhost:8081/api*
 
@@ -18,9 +18,9 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.ConfigsApi();
+let apiInstance = new MoreuJssdk.ConfigsApi();
 let key = "key_example"; // String | 键名
 
 apiInstance.configsKeyDelete(key, (error, data, response) => {
@@ -61,9 +61,9 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.ConfigsApi();
+let apiInstance = new MoreuJssdk.ConfigsApi();
 let key = "key_example"; // String | 键名
 
 apiInstance.configsKeyGet(key, (error, data, response) => {
@@ -104,9 +104,9 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.ConfigsApi();
+let apiInstance = new MoreuJssdk.ConfigsApi();
 let body = null; // Object | 参数
 let key = "key_example"; // String | 键名
 

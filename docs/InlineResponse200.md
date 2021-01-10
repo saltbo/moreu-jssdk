@@ -1,4 +1,4 @@
-# MoreuApi.InlineResponse200
+# MoreuJssdk.InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes

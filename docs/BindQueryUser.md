@@ -1,4 +1,4 @@
-# MoreuApi.BindQueryUser
+# MoreuJssdk.BindQueryUser
 
 ## Properties
 Name | Type | Description | Notes

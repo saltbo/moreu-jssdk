@@ -1,4 +1,4 @@
-# MoreuApi.ModelUserFormats
+# MoreuJssdk.ModelUserFormats
 
 ## Properties
 Name | Type | Description | Notes

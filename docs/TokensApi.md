@@ -1,4 +1,4 @@
-# MoreuApi.TokensApi
+# MoreuJssdk.TokensApi
 
 All URIs are relative to *//localhost:8081/api*
 
@@ -17,9 +17,9 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.TokensApi();
+let apiInstance = new MoreuJssdk.TokensApi();
 apiInstance.tokensDelete((error, data, response) => {
   if (error) {
     console.error(error);
@@ -55,10 +55,10 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.TokensApi();
-let body = new MoreuApi.BindBodyToken(); // BindBodyToken | 参数
+let apiInstance = new MoreuJssdk.TokensApi();
+let body = new MoreuJssdk.BindBodyToken(); // BindBodyToken | 参数
 
 apiInstance.tokensPost(body, (error, data, response) => {
   if (error) {

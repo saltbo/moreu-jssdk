@@ -1,4 +1,4 @@
-# MoreuApi.BindBodyUserPatch
+# MoreuJssdk.BindBodyUserPatch
 
 ## Properties
 Name | Type | Description | Notes

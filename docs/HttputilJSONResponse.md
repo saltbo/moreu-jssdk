@@ -1,4 +1,4 @@
-# MoreuApi.HttputilJSONResponse
+# MoreuJssdk.HttputilJSONResponse
 
 ## Properties
 Name | Type | Description | Notes

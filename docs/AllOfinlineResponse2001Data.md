@@ -1,4 +1,4 @@
-# MoreuApi.AllOfinlineResponse2001Data
+# MoreuJssdk.AllOfinlineResponse2001Data
 
 ## Properties
 Name | Type | Description | Notes

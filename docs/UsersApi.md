@@ -1,4 +1,4 @@
-# MoreuApi.UsersApi
+# MoreuJssdk.UsersApi
 
 All URIs are relative to *//localhost:8081/api*
 
@@ -21,9 +21,9 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
+let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
 apiInstance.userGet(username, (error, data, response) => {
@@ -64,10 +64,10 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
-let body = new MoreuApi.BindBodyUserPatch(); // BindBodyUserPatch | 参数
+let apiInstance = new MoreuJssdk.UsersApi();
+let body = new MoreuJssdk.BindBodyUserPatch(); // BindBodyUserPatch | 参数
 let email = "email_example"; // String | 邮箱
 
 apiInstance.usersEmailPatch(bodyemail, (error, data, response) => {
@@ -109,9 +109,9 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
+let apiInstance = new MoreuJssdk.UsersApi();
 let opts = { 
   'email': "email_example", // String | 
   'limit': 56, // Number | 
@@ -157,10 +157,10 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
-let body = new MoreuApi.BindBodyUser(); // BindBodyUser | 参数
+let apiInstance = new MoreuJssdk.UsersApi();
+let body = new MoreuJssdk.BindBodyUser(); // BindBodyUser | 参数
 
 apiInstance.usersPost(body, (error, data, response) => {
   if (error) {
@@ -200,9 +200,9 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
+let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
 apiInstance.usersUsernameGet(username, (error, data, response) => {
@@ -243,9 +243,9 @@ No authorization required
 
 ### Example
 ```javascript
-import MoreuApi from 'moreu_api';
+import MoreuJssdk from 'moreu-jssdk';
 
-let apiInstance = new MoreuApi.UsersApi();
+let apiInstance = new MoreuJssdk.UsersApi();
 let username = "username_example"; // String | 用户名
 
 apiInstance.usersUsernamePut(username, (error, data, response) => {
